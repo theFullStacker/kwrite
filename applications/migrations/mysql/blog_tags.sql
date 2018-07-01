@@ -1,0 +1,9 @@
+CREATE TABLE blog_tags(
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_blog INT UNSIGNED NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    slogan VARCHAR(30) NOT NULL,
+    description VARCHAR(255) NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_general_ci;

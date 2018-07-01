@@ -1,0 +1,8 @@
+# Enable Rewrite url for routes
+RewriteEngine on
+
+# Deny all list of folders in this directory
+Options All -Indexes
+
+# Example create a new route
+# RewriteRule ^my/route$ file.php [NC]

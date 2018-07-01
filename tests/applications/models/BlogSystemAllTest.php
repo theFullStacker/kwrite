@@ -1,0 +1,52 @@
+<?php
+
+use PHPUnit\Framework\TestCase;
+use Kwrite\Applications\Models\BlogSystemAll;
+use Kwrite\DBConnection\Connection;
+use Kwrite\MysqlEngine\Engine\Insert;
+use Kwrite\MysqlEngine\Engine\Delete;
+
+
+class BlogSystemAllTest extends TestCase
+{
+	public function testAll()
+	{
+		$this->create();
+
+		$model = new BlogSystemAll();
+		$model->page = 0;
+		$data = $model->all();
+
+		$this->assertEquals($data[0]["name"], "Novo Blog");
+		$this->assertEquals($data[0]["slogan"], "novo_blog");
+		$this->assertEquals($data[0]["description"], "Descrição do blog.");
+		$this->drop();
+	}
+
+	private function create()
+	{
+		$query = new Insert();
+        $query->tableName = "blog_system";
+        $query->name = "Novo Blog";
+        $query->slogan = "novo_blog";
+        $query->description = "Descrição do blog.";
+        $query->created_at = "datetime();";
+        $query->updated_at = "datetime();";
+
+        $conn = new Connection();
+        $conn->insert(
+            $query->make()
+        );
+	}
+
+	private function drop()
+	{
+		$query = new Delete();
+        $query->tableName = "blog_system";
+
+        $conn = new Connection();
+        $conn->delete(
+            $query->make()
+        );
+	}
+}

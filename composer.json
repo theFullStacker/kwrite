@@ -1,0 +1,23 @@
+{
+    "name": "Kwrite CMS",
+    "description": "The complete content manager for php.",
+    "authors": [
+        {
+            "name": "Jorge luiz da silva nascimento",
+            "email": "j_luizcpmg18@outlook.com"
+        },
+        {
+            "name": "Jorge luiz da silva nascimento",
+            "email": "j_luizcpmg18@yahoo.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=7.2.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+
+}

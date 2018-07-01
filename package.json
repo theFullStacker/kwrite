@@ -1,0 +1,10 @@
+{
+    "name": "KwriteCMS",
+    "version": "1.0.0",
+    "description": "The application for mananger data.",
+    "repository": "https://github.com/theFullStacker/kwrite",
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+    }
+}
